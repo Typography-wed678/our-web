@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>과자의 글자</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Diphylleia&family=Grandiflora+One&family=Moirai+One&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;700&family=Staatliches&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <button onclick="changeFont()">한국어 폰트 변경</button>
+    <button onclick="changeFontSize()">폰트 크기 변경</button>
+    <button onclick="changeLineHeight()">행간 변경</button>
+    <button onclick="changeMaxWidth()">줄글 길이 변경</button>
+    <button onclick="changeHeaderSize()">헤더 크기 변경</button>
+  </nav>
+  
+  <script>
+    let currentFont = 1;
+    let currentFontSize = 10;
+    let fontSizeChanged = false;
+    let currentLineHeight = 1.4;
+    let lineHeightChanged = false; // 행간 변경 여부
+    let currentMaxWidth = 1200;
+    let maxWidthChanged = false;
+    let currentHeaderSize = 32;
+    let headerSizeChanged = false;
+
+    const fonts = [
+      '"Diphylleia",serif',  // 라틴어 폰트
+      '"Helvetica", san-serif',  // 라틴어 폰트
+    ];
+
+      // 초기 폰트 설정
+      document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.document').style.fontFamily = fonts[currentFont];
+      document.querySelector('.document').style.fontSize = currentFontSize + 'pt'; // 초기 폰트 크기 설정
+      document.querySelector('.document').style.lineHeight = currentLineHeight; // 초기 행간 설정
+      document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px'; // 초기 maxWidth 설정
+      document.querySelector('.document').style.headerSize = currentHeaderSize + 'px'; // 초기 headerSize 설정
+    });
+
+    function changeFont() {
+      currentFont = (currentFont + 1) % fonts.length;
+      document.querySelector('.document').style.fontFamily = fonts[currentFont];
+    }
+
+    function changeFontSize() {
+      if (!fontSizeChanged) { // 폰트 크기가 변경되지 않은 경우에만 실행
+        currentFontSize = 13; // 폰트 크기를 14pt로 변경
+        document.querySelector('.document').style.fontSize = currentFontSize + 'pt';
+        fontSizeChanged = true; // 변경 여부를 true로 설정
+      }
+    }
+
+    function changeLineHeight() {
+      if (!lineHeightChanged) { // 행간이 변경되지 않은 경우에만 실행
+        currentLineHeight = 1.7; // 행간을 1.7로 변경
+        document.querySelector('.document').style.lineHeight = currentLineHeight;
+        lineHeightChanged = true; // 변경 여부를 true로 설정
+      }
+    }
+
+    function changeMaxWidth() {
+      if (!maxWidthChanged) { // maxWidth가 변경되지 않은 경우에만 실행
+        currentMaxWidth = 800; // maxWidth를 800으로 변경
+        document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px';
+        maxWidthChanged = true; // 변경 여부를 true로 설정
+      }
+    }
+
+    function changeHeaderSize() {
+      if (!headerSizeChanged) { // maxWidth가 변경되지 않은 경우에만 실행
+      currentHeaderSize += 2; // h1, h2 크기 증가
+      document.querySelector('.document h1').style.fontSize = currentHeaderSize + 'px';
+      headerSizeChanged = true; // 변경 여부를 true로 설정
+    }
+  }
+  </script>
+  
+  <article class="document">
+    <h1>과자의 글자</h1>
+    <h2 id="1">촉촉한 초코칩</h2>
+
+    <div class="author">
+
+      <img src="cookie.png" alt="초코칩"></div>
+     
+    <p>이름처럼 촉촉하고 쫀쫀 폭폭거리는 식감으로 구운 과자보다는 반죽 느낌의 쿠키 도우에 가까운 식감을 낸다. 맛은 상당히 단 편으로, 빵 같은 과자부터 이미 달콤한 맛이 나고 초코칩은 까맣다기 보다는 좀 더 갈색이면서 카카오 함량이 조금 더 높은 부드러운 초콜릿의 맛이 난다.</p>
+
+    <p>큼직한 초코칩이 박혀있는 쿠키라는 비슷한 제품으로서 촉촉한 초코칩과 칙촉은 종종 비교되곤 한다. 실제 이 둘은 초코칩 쿠키 분야 라이벌 구도가 형성 되어 있다.
+
+      칙촉은 빵 보다는 쿠키 식감에 바삭하게 부스러지는 특징이 있다. 전체적으로 달달한 촉촉한 초코칩과 달리 고소한 쿠키 맛에 까만 초콜릿 칩의 단맛을 가미한 스타일이다. 반대로 촉촉한 초코칩은 브라우니보다 조금 더 단단한 질감의 쿠키로 부드러운 식감이다. 칙촉보다 초코가 널리 퍼져 있고, 색이 더 진하다.
+      
+      부드러운 디저트형 식감을 좋아하는 사람이면 촉촉한 초코칩이 입맛에 더 잘 맞고, 까슬까슬한 쿠키 식감을 좋아하는 사람이면 칙촉이 입맛에 더 잘 맞을 가능성이 높다. 촉촉한 초코칩과 같은 회사 제품 중에는 오리온 초코칩쿠키가 까슬까슬한 쿠키 식감을 갖고 있다. 다만 이쪽은 보급형이라 그런지 초코칩이 너무 조금 들어 있다.</p>
+      
+      <p>참고로 촉촉한 초코칩은 오리온(기업) 제품이고, 칙촉은 롯데제과 제품이다.
+      
+      당류는 칙촉이 168g(12개입) 한박스 기준 58g, 촉촉한 초코칩이 160g(8개입) 한박스 기준으로 40g이므로 무게당으로 따져도 촉촉한 초코칩이 당분은 더 낮다.
+      
+      개당 무게는 칙촉이 예전보다 작아져 14g, 촉촉한 초코칩이 20g이다.
+      </p>
+
+    <h2 id="2">누드맛 빼빼로</h2>
+
+    <div class="author">
+
+      <img src="cookie.png" alt="초코칩"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+
+      <p>무장 해제된 정신이란 정신의 자유로움을 뜻한다. 시는 정신이 거느린 기존의 무기를 버리고 무기의 형식으로부터 자유로운 것이다. 그리고 자유로움은 그 자체가 새로운 무기다. 더 날카롭고 강력한 무기다. 감각은 새로운 차원의 감각이어서 시각과 청각은 물리적 한계를 넘어서 감지할 수 없었던 것을 포착하며, 인식은 사물의 경계를 넘나드는 경지로 나아간다. 투시하고, 침투하며, 스며든다. 이런 일련의 과정은 교란을 가져온다. 앞에 서서 흔들어버리는 것, 정신의 전위, 이것이 시의 토대다.</p>
+   
+    <h2 id="3">배배</h2> 
+
+    <div class="author">
+
+      <img src="cookie.png" alt="초코칩"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+
+      <p>무장 해제된 정신이란 정신의 자유로움을 뜻한다. 시는 정신이 거느린 기존의 무기를 버리고 무기의 형식으로부터 자유로운 것이다. 그리고 자유로움은 그 자체가 새로운 무기다. 더 날카롭고 강력한 무기다. 감각은 새로운 차원의 감각이어서 시각과 청각은 물리적 한계를 넘어서 감지할 수 없었던 것을 포착하며, 인식은 사물의 경계를 넘나드는 경지로 나아간다. 투시하고, 침투하며, 스며든다. 이런 일련의 과정은 교란을 가져온다. 앞에 서서 흔들어버리는 것, 정신의 전위, 이것이 시의 토대다.</p>
+
+    <h2 id="4">더:단백 팝칩</h2>
+
+    <div class="author">
+
+      <img src="cookie.png" alt="초코칩"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+
+      <p>무장 해제된 정신이란 정신의 자유로움을 뜻한다. 시는 정신이 거느린 기존의 무기를 버리고 무기의 형식으로부터 자유로운 것이다. 그리고 자유로움은 그 자체가 새로운 무기다. 더 날카롭고 강력한 무기다. 감각은 새로운 차원의 감각이어서 시각과 청각은 물리적 한계를 넘어서 감지할 수 없었던 것을 포착하며, 인식은 사물의 경계를 넘나드는 경지로 나아간다. 투시하고, 침투하며, 스며든다. 이런 일련의 과정은 교란을 가져온다. 앞에 서서 흔들어버리는 것, 정신의 전위, 이것이 시의 토대다.</p>
+  
+    <h2 id="5">오징어집</h2> 
+
+    <div class="author">
+
+      <img src="cookie.png" alt="초코칩"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+
+      <p>무장 해제된 정신이란 정신의 자유로움을 뜻한다. 시는 정신이 거느린 기존의 무기를 버리고 무기의 형식으로부터 자유로운 것이다. 그리고 자유로움은 그 자체가 새로운 무기다. 더 날카롭고 강력한 무기다. 감각은 새로운 차원의 감각이어서 시각과 청각은 물리적 한계를 넘어서 감지할 수 없었던 것을 포착하며, 인식은 사물의 경계를 넘나드는 경지로 나아간다. 투시하고, 침투하며, 스며든다. 이런 일련의 과정은 교란을 가져온다. 앞에 서서 흔들어버리는 것, 정신의 전위, 이것이 시의 토대다.</p>
+
+    <h2 id="6">베이글칩</h2>
+
+    <div class="author">
+
+      <img src="cookie.png" alt="초코칩"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+
+      <p>무장 해제된 정신이란 정신의 자유로움을 뜻한다. 시는 정신이 거느린 기존의 무기를 버리고 무기의 형식으로부터 자유로운 것이다. 그리고 자유로움은 그 자체가 새로운 무기다. 더 날카롭고 강력한 무기다. 감각은 새로운 차원의 감각이어서 시각과 청각은 물리적 한계를 넘어서 감지할 수 없었던 것을 포착하며, 인식은 사물의 경계를 넘나드는 경지로 나아간다. 투시하고, 침투하며, 스며든다. 이런 일련의 과정은 교란을 가져온다. 앞에 서서 흔들어버리는 것, 정신의 전위, 이것이 시의 토대다.</p>
+    </article>
+</body>
+</html>

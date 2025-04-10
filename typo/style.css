@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  cursor: url('cursor.cur'), auto;
+}
+
+body {
+  padding: 16px;
+  font-family: "Noto Sans", serif;
+  font-size: 16px;
+  line-height: 1.7;
+  word-break: keep-all;
+  background-color: lightyellow;
+  background-size: 25%;
+  cursor: url('cursor.cur'), auto;
+}
+
+.document {
+  position: absolute;	
+  bottom: 32px;
+  left: 32px;  
+	max-width: 800px;
+  max-height: 600px;
+  overflow: auto;
+	padding: 32px;
+	background-color: white;
+	box-shadow: 4px 4px 20px rgba(0,0,0,.5);
+}
+
+.document h1 {
+	margin-bottom: 32px;
+	font-size: 32px;
+	text-align: center;
+	color: black;
+}
+
+.document h2 {
+  text-indent: 32px;
+}
+
+.document h2,
+.document p,
+.document img {
+	margin-bottom: 20px;
+}
+
+.author {
+	float: right;
+	width: 200px;
+	margin-left: 32px;
+  margin-bottom: 32px;
+
+}
+
+.author img {
+	display: block;
+  max-width: 100%;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.nav {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+	width: 300px;
+	height: 230px;
+	padding: 20px;
+	overflow: auto;
+  transform: rotate(6deg);
+  font-size: 16px;
+	background-color: black;
+  border-radius: 16px;
+}
+
+.nav a {
+	display: block;
+	color: lightyellow;
+	text-decoration: none;
+}
+
+.nav a:hover {
+  padding-left: 6px;
+  padding-right: 6px;
+	background-color: lightyellow;
+	color: black;
+  border-radius: 16px;
+}
+
+.nav a:active {
+	background-color: black;
+}
