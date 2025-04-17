@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YEOJIN's DOOR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Diphylleia&family=Grandiflora+One&family=Moirai+One&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;700&family=Staatliches&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <button onclick="changeFont()">여진의 아름다운 글자체</button>
+    <button onclick="changeFontSize()">여진의 아름다운 글자 크기</button>
+    <button onclick="changeLineHeight()">여진의 아름다운 행간</button>
+    <button onclick="changeMaxWidth()">여진의 아름다운 글줄 길이</button>
+    <button onclick="changeHeaderSize()">여진의 아름다운 헤더</button>
+  </nav>
+  
+  <script>
+    let currentFont = 1;
+    let currentFontSize = 10;
+    let fontSizeChanged = false;
+    let currentLineHeight = 1.4;
+    let lineHeightChanged = false; // 행간 변경 여부
+    let currentMaxWidth = 1200;
+    let maxWidthChanged = false;
+    let currentHeaderSize = 32;
+    let headerSizeChanged = false;
+
+    const fonts = [
+      '"Diphylleia",serif',  // 라틴어 폰트
+      '"Helvetica", san-serif',  // 라틴어 폰트
+    ];
+
+      // 초기 폰트 설정
+      document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.document').style.fontFamily = fonts[currentFont];
+      document.querySelector('.document').style.fontSize = currentFontSize + 'pt'; // 초기 폰트 크기 설정
+      document.querySelector('.document').style.lineHeight = currentLineHeight; // 초기 행간 설정
+      document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px'; // 초기 maxWidth 설정
+      document.querySelector('.document').style.headerSize = currentHeaderSize + 'px'; // 초기 headerSize 설정
+    });
+
+    function changeFont() {
+      currentFont = (currentFont + 1) % fonts.length;
+      document.querySelector('.document').style.fontFamily = fonts[currentFont];
+    }
+
+    function changeFontSize() {
+      if (!fontSizeChanged) { // 폰트 크기가 변경되지 않은 경우에만 실행
+        currentFontSize = 13; // 폰트 크기를 14pt로 변경
+        document.querySelector('.document').style.fontSize = currentFontSize + 'pt';
+        fontSizeChanged = true; // 변경 여부를 true로 설정
+      }
+    }
+
+    function changeLineHeight() {
+      if (!lineHeightChanged) { // 행간이 변경되지 않은 경우에만 실행
+        currentLineHeight = 1.7; // 행간을 1.7로 변경
+        document.querySelector('.document').style.lineHeight = currentLineHeight;
+        lineHeightChanged = true; // 변경 여부를 true로 설정
+      }
+    }
+
+    function changeMaxWidth() {
+      if (!maxWidthChanged) { // maxWidth가 변경되지 않은 경우에만 실행
+        currentMaxWidth = 800; // maxWidth를 800으로 변경
+        document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px';
+        maxWidthChanged = true; // 변경 여부를 true로 설정
+      }
+    }
+
+    function changeHeaderSize() {
+      if (!headerSizeChanged) { // maxWidth가 변경되지 않은 경우에만 실행
+      currentHeaderSize += 2; // h1, h2 크기 증가
+      document.querySelector('.document h1').style.fontSize = currentHeaderSize + 'px';
+      headerSizeChanged = true; // 변경 여부를 true로 설정
+    }
+  }
+  </script>
+  
+  <article class="document">
+    <h1>여진의 아름다운 "콤핑"</h1>
+    <h2 id="1">1. 본인만의 필살기 서체가 있나요?</h2>
+
+    <div class="author"></div>
+     
+      <p>이름처럼 촉촉하고 쫀쫀 폭폭거리는 식감으로 구운 과자보다는 반죽 느낌의 쿠키 도우에 가까운 식감을 낸다. 맛은 상당히 단 편으로, 빵 같은 과자부터 이미 달콤한 맛이 나고 초코칩은 까맣다기 보다는 좀 더 갈색이면서 카카오 함량이 조금 더 높은 부드러운 초콜릿의 맛이 난다.</p>
+
+    <h2 id="2">2. A4 한 장을 꽉 채운다고 가정했을 때, 어떤 크기의 폰트를 사용하고 싶으신가요? </h2>
+
+    <div class="author"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+   
+    <h2 id="3">3. 평소에 글을 읽을 때, 글 속의 행간을 의식하며 읽는 편인가요?</h2> 
+
+    <div class="author"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+  
+    <h2 id="4">4. 숏폼처럼 짧게 끊어지는 글줄 vs 한 페이지를 가득 채우는 길이의 글줄 </h2> 
+
+    <div class="author"></div>
+
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+    
+    <h2 id="5">5. 단락을 나눌 때 가장 중요하게 생각하는 기준은 무엇인가요?</h2> 
+
+    <div class="author"></div>
+      
+      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+  
+    </article>
+</body>
+</html>

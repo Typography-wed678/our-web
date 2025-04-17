@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  padding: 16px;
+  font-family: "Noto Sans", serif;
+  font-size: 16px;
+  line-height: 1.7;
+  word-break: keep-all;
+  background-color: lightyellow;
+  background-size: 25%;
+}
+
+.document {
+  position: fixed;	
+  top: 50%; /* 중앙 정렬을 위한 위치 설정 */
+  left: 50%; /* 중앙 정렬을 위한 위치 설정 */
+  transform: translate(-50%, -37%); 
+  width: 90%; /* 변경: 너비를 90%로 설정하여 화면 크기에 따라 조정 */
+  max-width: 900px; /* 최대 너비를 900px로 설정 */
+  max-height: 620px;
+  overflow: auto;
+	padding: 32px;
+	background-color: white;
+	box-shadow: 4px 4px 20px rgba(0,0,0,.5);
+}
+
+.document h1 {
+	margin-bottom: 32px;
+	font-size: 32px;
+	text-align: center;
+	color: black;
+}
+
+.document h2 {
+  text-indent: 32px;
+}
+
+.document h2,
+.document p,
+.document img {
+	margin-bottom: 20px;
+}
+
+.author {
+	float: right;
+	width: 200px;
+	margin-left: 32px;
+  margin-bottom: 32px;
+
+}
+
+.author img {
+	display: block;
+  max-width: 100%;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.nav {
+  position: fixed;
+  top: 32px;
+  left: calc(50% + 50px); /* 중앙에서 오른쪽으로 50px 이동 */
+	width: 300px;
+	height: 230px;
+	padding: 20px;
+	overflow: auto;
+  transform: rotate(6deg);
+  font-size: 16px;
+	background-color: black;
+  border-radius: 16px;
+}
+
+.nav button {
+  display: block;
+  background-color: lightyellow; /* 버튼 배경색을 lightyellow로 변경 */
+  color: black; /* 버튼 글자색을 검정으로 설정 */
+  border: none; /* 기본 테두리 제거 */
+  padding: 0.5px 5px; /* 버튼 패딩 추가 */
+  margin-bottom: 10px; /* 버튼 간격 추가 */
+  cursor: pointer; /* 커서 모양 변경 */
+  border-radius: 4px; /* 네비게이션 박스의 모서리 둥글게 설정 */
+}
+
+.nav button:hover {
+  background-color: black; /* 호버 시 배경색 변경 */
+  color: lightyellow; /* 호버 시 글자색 변경 */
+}
+
+.nav a {
+	display: block;
+	color: lightyellow;
+	text-decoration: none;
+}
+
+.nav a:hover {
+  padding-left: 6px;
+  padding-right: 6px;
+	background-color: lightyellow;
+	color: black;
+  border-radius: 16px;
+}
+
+.nav a:active {
+	background-color: black;
+}
