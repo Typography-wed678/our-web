@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SEOYEON's DOOR</title>
+  <title>JIAHN's DOOR</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Diphylleia&family=Grandiflora+One&family=Moirai+One&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;700&family=Staatliches&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -11,12 +11,16 @@
 </head>
 <body>
   <nav class="nav">
-    <button onclick="changeFont()">서연의 아름다운 글자체</button>
-    <button onclick="changeFontSize()">서연의 아름다운 글자 크기</button>
-    <button onclick="changeLineHeight()">서연의 아름다운 행간</button>
-    <button onclick="changeMaxWidth()">서연의 아름다운 글줄 길이</button>
-    <button onclick="changeHeaderSize()">서연의 아름다운 헤더</button>
+    <button onclick="changeFont()">지안의 아름다운 글자체</button>
+    <button onclick="changeFontSize()">지안의 아름다운 글자 크기</button>
+    <button onclick="changeLineHeight()">지안의 아름다운 행간</button>
+    <button onclick="changeMaxWidth()">지안의 아름다운 글줄 길이</button>
+    <button onclick="changeHeaderSize()">지안의 아름다운 헤더</button>
   </nav>
+
+  <door class="door" onclick="window.location.href='index.html'" style="cursor: pointer;">
+    <img src="door.png" alt="Door Icon" class="door-icon" id="doorImage">
+  </door>
   
   <script>
     let currentFont = 1;
@@ -29,9 +33,19 @@
     let currentHeaderSize = 32;
     let headerSizeChanged = false;
 
+    const doorImage = document.getElementById('doorImage');
+
+doorImage.addEventListener('mouseover', function() {
+  doorImage.src = 'door2.png'; // 커서가 올라갔을 때 이미지 변경
+});
+
+doorImage.addEventListener('mouseout', function() {
+  doorImage.src = 'door.png'; // 커서가 벗어났을 때 원래 이미지로 변경
+});
+
     const fonts = [
-      '"Diphylleia",serif',  // 라틴어 폰트
       '"Helvetica", san-serif',  // 라틴어 폰트
+      '"BookkGothic-Bd",serif',  // 라틴어 폰트
     ];
 
       // 초기 폰트 설정
@@ -50,7 +64,7 @@
 
     function changeFontSize() {
       if (!fontSizeChanged) { // 폰트 크기가 변경되지 않은 경우에만 실행
-        currentFontSize = 13; // 폰트 크기를 14pt로 변경
+        currentFontSize = 10; // 폰트 크기를 10pt로 변경
         document.querySelector('.document').style.fontSize = currentFontSize + 'pt';
         fontSizeChanged = true; // 변경 여부를 true로 설정
       }
@@ -66,7 +80,7 @@
 
     function changeMaxWidth() {
       if (!maxWidthChanged) { // maxWidth가 변경되지 않은 경우에만 실행
-        currentMaxWidth = 800; // maxWidth를 800으로 변경
+        currentMaxWidth = 850; // maxWidth를 800으로 변경
         document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px';
         maxWidthChanged = true; // 변경 여부를 true로 설정
       }
@@ -74,7 +88,7 @@
 
     function changeHeaderSize() {
       if (!headerSizeChanged) { // maxWidth가 변경되지 않은 경우에만 실행
-      currentHeaderSize += 2; // h1, h2 크기 증가
+      currentHeaderSize += 1.8; // h1, h2 크기 증가
       document.querySelector('.document h1').style.fontSize = currentHeaderSize + 'px';
       headerSizeChanged = true; // 변경 여부를 true로 설정
     }
@@ -82,36 +96,26 @@
   </script>
   
   <article class="document">
-    <h1>서연의 아름다운 "콤핑"</h1>
+    <h1>지안의 아름다운 "콤핑"</h1>
     <h2 id="1">1. 본인만의 필살기 서체가 있나요?</h2>
-
-    <div class="author"></div>
      
-      <p>이름처럼 촉촉하고 쫀쫀 폭폭거리는 식감으로 구운 과자보다는 반죽 느낌의 쿠키 도우에 가까운 식감을 낸다. 맛은 상당히 단 편으로, 빵 같은 과자부터 이미 달콤한 맛이 나고 초코칩은 까맣다기 보다는 좀 더 갈색이면서 카카오 함량이 조금 더 높은 부드러운 초콜릿의 맛이 난다.</p>
+      <p>저는 pretandard 서체를 애용해요. 깔끔하고 정돈된 인상을 줘서 웹, 앱, 인쇄물 모두에서 가독성이 우수하고 다국어와 특수문자를 대입했을 때 가장 조화롭다고 느꼈어요.</p>
 
     <h2 id="2">2. A4 한 장을 꽉 채운다고 가정했을 때, 어떤 크기의 폰트를 사용하고 싶으신가요? </h2>
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>저는 10pt의 폰트를 사용하고 싶어요. 큰 글자보다는 작은 글자들이 촘촘히 배열되었을 때 시선이 흩어지지 않고 문장 흐름을 따라가기 쉬워진다고 느껴요. 특히, 긴 문장을 읽을 때 짧은 시야 안에 많은 정보를 담을 수 있어 읽는 흐름이 자연스럽게 이어지는 것 같아요. 그리고 책이나 다른 인쇄물에서 작은 글자가 더 아카이브적인 느낌을 줘서 작은 글자를 선호하는 것 같아요.</p>
    
     <h2 id="3">3. 평소에 글을 읽을 때, 글 속의 행간을 의식하며 읽는 편인가요?</h2> 
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>저는 행간을 많이 의식하는 편이에요. 행간이 좁으면 텍스트가 너무 답답하게 느껴져서 글을 읽기가 싫어져요. 넓은 행간이 숨 쉴 틈 같은 여백을 제공해서 편안함과 차분함을 주는 것 같아요. 특히 복잡하거나 긴 텍스트의 경우, 내용을 구조적으로 이해하는 데 넓은 행간이 도움을 주는 것 같아요.</p>
   
     <h2 id="4">4. 숏폼처럼 짧게 끊어지는 글줄 vs 한 페이지를 가득 채우는 길이의 글줄 </h2> 
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>저는 한 페이지를 가득 채우는 길이의 글줄을 선호해요. 긴 글줄이 사고의 맥락을 끊지 않고 천천히 깊이 있게 몰입하여 읽어나갈 수 있게 만들어주는 것 같아요. 한눈에 많은 문장이 들어올 때 생기는 정보의 덩어리감이 시각적으로 묵직한 인상을 주어서 많은 정보를 습득하는 것 같은 느낌도 줘요. </p>
     
     <h2 id="5">5. 단락을 나눌 때 가장 중요하게 생각하는 기준은 무엇인가요?</h2> 
-
-    <div class="author"></div>
       
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>주제나 내용이에요. 단락은 단순한 시각적 구분이 아니라, 의미의 단위이자 사고의 단위이기 때문에 주제 변화에 따라 단락을 나누면, 독자는 “아, 이건 새로운 이야기구나”하고 내용의 전환을 직관적으로 인식할 수 있어요. 주제나 내용이 바뀌지 않았는데도 단락을 나누면 흐름이 끊기고, 반대로 바뀌었는데도 계속 이어 쓰면 독자가 무슨 말이 중요한지 혼란스러워져요.</p>
   
     </article>
 </body>

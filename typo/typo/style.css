@@ -77,6 +77,33 @@ body {
   border-radius: 16px;
 }
 
+.door {
+  position: fixed;
+  top: 130px;
+  left: calc(50% + 280px); /* 중앙에서 오른쪽으로 50px 이동 */
+	width: 86px;
+	height: 110px;
+	padding: 0px;
+	overflow: auto;
+  transform: rotate(6deg);
+  font-size: 16px;
+	background-color: lightyellow;
+  border: dashed 1px;
+  border-color: black;
+  border-radius: 4px;
+  transition: background-color 0.1s; /* 부드러운 색상 전환 */
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.door:hover {
+  background-color: lightyellow; /* 호버 시 배경색 변경 */
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
 .nav button {
   display: block;
   background-color: lightyellow; /* 버튼 배경색을 lightyellow로 변경 */
@@ -110,3 +137,4 @@ body {
 .nav a:active {
 	background-color: black;
 }
+

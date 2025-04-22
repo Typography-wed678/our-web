@@ -8,6 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Diphylleia&family=Grandiflora+One&family=Moirai+One&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;700&family=Staatliches&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    @font-face {
+      font-family: 'KoddiUDOnGothic-Regular';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/KoddiUDOnGothic-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -17,6 +25,10 @@
     <button onclick="changeMaxWidth()">채연의 아름다운 글줄 길이</button>
     <button onclick="changeHeaderSize()">채연의 아름다운 헤더</button>
   </nav>
+
+  <door class="door" onclick="window.location.href='index.html'" style="cursor: pointer;">
+    <img src="door.png" alt="Door Icon" class="door-icon" id="doorImage">
+  </door>
   
   <script>
     let currentFont = 1;
@@ -29,9 +41,20 @@
     let currentHeaderSize = 32;
     let headerSizeChanged = false;
 
+    const doorImage = document.getElementById('doorImage');
+
+doorImage.addEventListener('mouseover', function() {
+  doorImage.src = 'door2.png'; // 커서가 올라갔을 때 이미지 변경
+});
+
+doorImage.addEventListener('mouseout', function() {
+  doorImage.src = 'door.png'; // 커서가 벗어났을 때 원래 이미지로 변경
+});
+
     const fonts = [
       '"Diphylleia",serif',  // 라틴어 폰트
       '"Helvetica", san-serif',  // 라틴어 폰트
+      '"KoddiUDOnGothic-Regular", sans-serif',  // KoddiUD 온고딕
     ];
 
       // 초기 폰트 설정
@@ -45,12 +68,12 @@
 
     function changeFont() {
       currentFont = (currentFont + 1) % fonts.length;
-      document.querySelector('.document').style.fontFamily = fonts[currentFont];
+      document.querySelector('.document').style.fontFamily = "KoddiUDOnGothic-Regular";
     }
 
     function changeFontSize() {
       if (!fontSizeChanged) { // 폰트 크기가 변경되지 않은 경우에만 실행
-        currentFontSize = 13; // 폰트 크기를 14pt로 변경
+        currentFontSize = 11; // 폰트 크기를 14pt로 변경
         document.querySelector('.document').style.fontSize = currentFontSize + 'pt';
         fontSizeChanged = true; // 변경 여부를 true로 설정
       }
@@ -58,7 +81,7 @@
 
     function changeLineHeight() {
       if (!lineHeightChanged) { // 행간이 변경되지 않은 경우에만 실행
-        currentLineHeight = 1.7; // 행간을 1.7로 변경
+        currentLineHeight = 1.6; // 행간을 1.7로 변경
         document.querySelector('.document').style.lineHeight = currentLineHeight;
         lineHeightChanged = true; // 변경 여부를 true로 설정
       }
@@ -66,7 +89,7 @@
 
     function changeMaxWidth() {
       if (!maxWidthChanged) { // maxWidth가 변경되지 않은 경우에만 실행
-        currentMaxWidth = 800; // maxWidth를 800으로 변경
+        currentMaxWidth = 595; // maxWidth를 800으로 변경
         document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px';
         maxWidthChanged = true; // 변경 여부를 true로 설정
       }
@@ -85,33 +108,24 @@
     <h1>채연의 아름다운 "콤핑"</h1>
     <h2 id="1">1. 본인만의 필살기 서체가 있나요?</h2>
 
-    <div class="author"></div>
-     
-      <p>이름처럼 촉촉하고 쫀쫀 폭폭거리는 식감으로 구운 과자보다는 반죽 느낌의 쿠키 도우에 가까운 식감을 낸다. 맛은 상당히 단 편으로, 빵 같은 과자부터 이미 달콤한 맛이 나고 초코칩은 까맣다기 보다는 좀 더 갈색이면서 카카오 함량이 조금 더 높은 부드러운 초콜릿의 맛이 난다.</p>
+    <p>아직까지 그런 서체가 없어요. pretendard를 기본으로 사용하지만 필살기라고 생각하지 않아요. 
+      제게 필살기 서체가 없는 이유는 아직 디자이너로서 정체성이 부족하기 때문이라고 생각해요. 언젠가 든든한 국밥 같은 폰트를 만나고 싶어요.</p>
 
     <h2 id="2">2. A4 한 장을 꽉 채운다고 가정했을 때, 어떤 크기의 폰트를 사용하고 싶으신가요? </h2>
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+    <p> A4용지를 꽉 채워본 적이 없어서 꼭 한번 해보고 싶어요. 개인적으로 글자로 검은 면을 만들어 보고 싶어요. 진짜 개미와 같은 크기를 사용해 볼래요. 한 3pt 정도 되려나요? 평소라면 절대 하지 않을 짓이라는 점에서 시도해보고 싶어요. </p>
    
     <h2 id="3">3. 평소에 글을 읽을 때, 글 속의 행간을 의식하며 읽는 편인가요?</h2> 
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+    <p>집중력이 부족한 탓인지 행간이 좁으면 다음 글줄이 어딘지 헤매는 경우가 많아요. 그래서 읽는 지점이 어딘지 잊지 않게 손가락으로 가리키며 읽곤 해요. 너무 좁은 것도 선호하지만 않지만 너무 넓은 것도 지루하게 느껴지니 적당한 행간을 선호해요. 아마 그래서 행간이 140-160% 정도로 정해져 있나 봐요.</p>
   
     <h2 id="4">4. 숏폼처럼 짧게 끊어지는 글줄 vs 한 페이지를 가득 채우는 길이의 글줄 </h2> 
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+    <p>한 페이지를 가득 채울 정도로 이어지는 글을 쓰는 게 실제로 가능할까요? 현대인들 성격이 급하고 인내심이 바닥 난 상태라 긴 글은 아무도 읽으려 하지 않을 것 같아요. 차라리 화제가 빠르게 바뀌고 의식의 흐름처럼 느껴지는 글이 괜찮겠네요.</p>
     
     <h2 id="5">5. 단락을 나눌 때 가장 중요하게 생각하는 기준은 무엇인가요?</h2> 
-
-    <div class="author"></div>
       
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+    <p>단락의 모양도 중요하고 단락의 내용도 중요하고 단락이 어디서 끊어지는지도 중요합니다. 인생을 잘 일단락하는 것도 중요하고요.</p>
   
     </article>
 </body>

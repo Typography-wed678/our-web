@@ -17,6 +17,10 @@
     <button onclick="changeMaxWidth()">아현의 아름다운 글줄 길이</button>
     <button onclick="changeHeaderSize()">아현의 아름다운 헤더</button>
   </nav>
+
+  <door class="door" onclick="window.location.href='index.html'" style="cursor: pointer;">
+    <img src="door.png" alt="Door Icon" class="door-icon" id="doorImage">
+  </door>
   
   <script>
     let currentFont = 1;
@@ -28,6 +32,16 @@
     let maxWidthChanged = false;
     let currentHeaderSize = 32;
     let headerSizeChanged = false;
+
+    const doorImage = document.getElementById('doorImage');
+
+doorImage.addEventListener('mouseover', function() {
+  doorImage.src = 'door2.png'; // 커서가 올라갔을 때 이미지 변경
+});
+
+doorImage.addEventListener('mouseout', function() {
+  doorImage.src = 'door.png'; // 커서가 벗어났을 때 원래 이미지로 변경
+});
 
     const fonts = [
       '"Diphylleia",serif',  // 라틴어 폰트
@@ -50,7 +64,7 @@
 
     function changeFontSize() {
       if (!fontSizeChanged) { // 폰트 크기가 변경되지 않은 경우에만 실행
-        currentFontSize = 13; // 폰트 크기를 14pt로 변경
+        currentFontSize = 12; // 폰트 크기를 14pt로 변경
         document.querySelector('.document').style.fontSize = currentFontSize + 'pt';
         fontSizeChanged = true; // 변경 여부를 true로 설정
       }
@@ -58,7 +72,7 @@
 
     function changeLineHeight() {
       if (!lineHeightChanged) { // 행간이 변경되지 않은 경우에만 실행
-        currentLineHeight = 1.7; // 행간을 1.7로 변경
+        currentLineHeight = 1.9; // 행간을 1.7로 변경
         document.querySelector('.document').style.lineHeight = currentLineHeight;
         lineHeightChanged = true; // 변경 여부를 true로 설정
       }
@@ -66,7 +80,7 @@
 
     function changeMaxWidth() {
       if (!maxWidthChanged) { // maxWidth가 변경되지 않은 경우에만 실행
-        currentMaxWidth = 800; // maxWidth를 800으로 변경
+        currentMaxWidth = 750; // maxWidth를 800으로 변경
         document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px';
         maxWidthChanged = true; // 변경 여부를 true로 설정
       }
@@ -74,7 +88,7 @@
 
     function changeHeaderSize() {
       if (!headerSizeChanged) { // maxWidth가 변경되지 않은 경우에만 실행
-      currentHeaderSize += 2; // h1, h2 크기 증가
+      currentHeaderSize += 1.5; // h1, h2 크기 증가
       document.querySelector('.document h1').style.fontSize = currentHeaderSize + 'px';
       headerSizeChanged = true; // 변경 여부를 true로 설정
     }
@@ -84,34 +98,24 @@
   <article class="document">
     <h1>아현의 아름다운 "콤핑"</h1>
     <h2 id="1">1. 본인만의 필살기 서체가 있나요?</h2>
-
-    <div class="author"></div>
      
-      <p>이름처럼 촉촉하고 쫀쫀 폭폭거리는 식감으로 구운 과자보다는 반죽 느낌의 쿠키 도우에 가까운 식감을 낸다. 맛은 상당히 단 편으로, 빵 같은 과자부터 이미 달콤한 맛이 나고 초코칩은 까맣다기 보다는 좀 더 갈색이면서 카카오 함량이 조금 더 높은 부드러운 초콜릿의 맛이 난다.</p>
+      <p>사실 필살기 서체라고 할 것까진 없지만, 주로 Diphylleia의 세리프체를 자주 쓰긴 하는 것 같아요. 무슨 말을 써도 고급스러운 느낌이 나게 해주는 글자체인 것 같아서 한 번 씩은 적용을 해보고 있어요. 고딕체를 사용해야 할 때는 Noto Sans나 부크크 고딕을 적용해보구요. 그리고 타이포그라피 수업을 들으면서 자주 사용했던 pretendard는 일본어나 중국어 한자를 쓸 때 모든 글자가 잘 적용이 되서 외래어가 많이 들어간 텍스트를 써야할 때 자주 썼구요. 아직 어느 글자체가 너무 아름답다고 주장하기엔 이른 실력인 것 같아요.</p>
 
     <h2 id="2">2. A4 한 장을 꽉 채운다고 가정했을 때, 어떤 크기의 폰트를 사용하고 싶으신가요? </h2>
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>A4 한 장을 꽉 채울 땐 위에서 말 했듯, Diphylleia의 세리프체를 자주 쓰고 있어요. 무슨 글자를 써도 제가 쓴 글들이 되게 소중해보이는, 가치있어 보이는 효과가 나는 것 같아서요.</p>
    
     <h2 id="3">3. 평소에 글을 읽을 때, 글 속의 행간을 의식하며 읽는 편인가요?</h2> 
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>조판, 콤핑을 배운 이후로 행간을 엄청 인식하게 되었는데요. 사실 모를 때가 나았던 것 같기도 해요. 괜히 "아 이 행간은 다 디자이너가 생각이 있어서 이렇게 했겠지?" 하면서 디자이너의 역할을 한 번 씩은 곱씹게 되더라구요. 책을 대하는 관점이 하나 더 늘어버린 것 같아서 피곤하면서도, 책을 한 권 한 권 접할수록 조판의 예시를, 디자인 작품을 하나 더 참고하고 배워가는 것 같아서 기분이 좋기도 해요.</p>
   
     <h2 id="4">4. 숏폼처럼 짧게 끊어지는 글줄 vs 한 페이지를 가득 채우는 길이의 글줄 </h2> 
 
-    <div class="author"></div>
-
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>어느 쪽도 다 이유가 있는 디자인이고 아름다운 디자인이지만, 아무래도 한 페이지를 가득 채우는 글이 좋은 것 같아요. 그만큼 디자이너의 비중이 큰 작품이라고 생각이 들어서 인 것 같구요. 어느 글은 작고 어느 글은 진하게 강조되어 있는 걸 디자이너의 의도로 해석하면서 글을 읽었을 때, 제가 배우는 것들이 더 많게 느껴지더라구요.</p>
     
     <h2 id="5">5. 단락을 나눌 때 가장 중요하게 생각하는 기준은 무엇인가요?</h2> 
-
-    <div class="author"></div>
       
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>물론 이야기의 흐름이 바뀌는 지점에서 나누고 있지만, 그럴 때 있잖아요. 아직 단락을 나눌 때가 아닌데 다음 페이지로 글이 넘어갈 때. 그럴 때는 참 곤란하더라구요. 아직 글의 흐름이 이어지고 있는데 다음 페이지로 넘어가면 과연 독자가 혹은 사용자가 이 글을 편하게 읽을 수 있을까? 싶은 걱정이 먼저 앞서서 괜히 한 번 씩 행간을 조정해서 글을 앞당겨 본다던가 콤핑을 수정하게 되더라구요. 근데 엄청나게 긴 글을 만약에 모두 그렇게 수정해야할 때, 사실 모든 글의 흐름을 지켜가면서 단락을 나누기란 불가능하잖아요. 그래서 요즘은 차라리 애초에 단락 나누기를 아주 명확히 티를 내서 글의 흐름이 이어지는 것을 역으로 강조하는 것 같아요. 예를 들면 단락의 거리를 아주 길게 주고 다음 장으로 이어지는 글들이 하나의 단락 내에 포함되어 있다는 걸 독자가 알아차릴 수 있도록 말이죠.</p>
   
     </article>
 </body>

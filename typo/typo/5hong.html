@@ -6,8 +6,18 @@
   <title>YEOJIN's DOOR</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Diphylleia&family=Grandiflora+One&family=Moirai+One&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;700&family=Staatliches&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Diphylleia&family=Grandiflora+One&family=Hahmlet:wght@100..900&family=Moirai+One&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@400;700&family=Staatliches&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'myi1smc',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </head>
 <body>
   <nav class="nav">
@@ -17,6 +27,10 @@
     <button onclick="changeMaxWidth()">여진의 아름다운 글줄 길이</button>
     <button onclick="changeHeaderSize()">여진의 아름다운 헤더</button>
   </nav>
+
+  <door class="door" onclick="window.location.href='index.html'" style="cursor: pointer;">
+    <img src="door.png" alt="Door Icon" class="door-icon" id="doorImage">
+  </door>
   
   <script>
     let currentFont = 1;
@@ -29,8 +43,19 @@
     let currentHeaderSize = 32;
     let headerSizeChanged = false;
 
+
+    const doorImage = document.getElementById('doorImage');
+
+doorImage.addEventListener('mouseover', function() {
+  doorImage.src = 'door2.png'; // 커서가 올라갔을 때 이미지 변경
+});
+
+doorImage.addEventListener('mouseout', function() {
+  doorImage.src = 'door.png'; // 커서가 벗어났을 때 원래 이미지로 변경
+});
+
     const fonts = [
-      '"Diphylleia",serif',  // 라틴어 폰트
+      '"hahmlet", sans-serif',  // 라틴어 폰트
       '"Helvetica", san-serif',  // 라틴어 폰트
     ];
 
@@ -50,7 +75,7 @@
 
     function changeFontSize() {
       if (!fontSizeChanged) { // 폰트 크기가 변경되지 않은 경우에만 실행
-        currentFontSize = 13; // 폰트 크기를 14pt로 변경
+        currentFontSize = 11; // 폰트 크기를 14pt로 변경
         document.querySelector('.document').style.fontSize = currentFontSize + 'pt';
         fontSizeChanged = true; // 변경 여부를 true로 설정
       }
@@ -58,7 +83,7 @@
 
     function changeLineHeight() {
       if (!lineHeightChanged) { // 행간이 변경되지 않은 경우에만 실행
-        currentLineHeight = 1.7; // 행간을 1.7로 변경
+        currentLineHeight = 1.8; // 행간을 1.7로 변경
         document.querySelector('.document').style.lineHeight = currentLineHeight;
         lineHeightChanged = true; // 변경 여부를 true로 설정
       }
@@ -66,7 +91,7 @@
 
     function changeMaxWidth() {
       if (!maxWidthChanged) { // maxWidth가 변경되지 않은 경우에만 실행
-        currentMaxWidth = 800; // maxWidth를 800으로 변경
+        currentMaxWidth = 900; // maxWidth를 800으로 변경
         document.querySelector('.document').style.maxWidth = currentMaxWidth + 'px';
         maxWidthChanged = true; // 변경 여부를 true로 설정
       }
@@ -74,7 +99,7 @@
 
     function changeHeaderSize() {
       if (!headerSizeChanged) { // maxWidth가 변경되지 않은 경우에만 실행
-      currentHeaderSize += 2; // h1, h2 크기 증가
+      currentHeaderSize += 1.5; // h1, h2 크기 증가
       document.querySelector('.document h1').style.fontSize = currentHeaderSize + 'px';
       headerSizeChanged = true; // 변경 여부를 true로 설정
     }
@@ -85,33 +110,28 @@
     <h1>여진의 아름다운 "콤핑"</h1>
     <h2 id="1">1. 본인만의 필살기 서체가 있나요?</h2>
 
-    <div class="author"></div>
      
-      <p>이름처럼 촉촉하고 쫀쫀 폭폭거리는 식감으로 구운 과자보다는 반죽 느낌의 쿠키 도우에 가까운 식감을 낸다. 맛은 상당히 단 편으로, 빵 같은 과자부터 이미 달콤한 맛이 나고 초코칩은 까맣다기 보다는 좀 더 갈색이면서 카카오 함량이 조금 더 높은 부드러운 초콜릿의 맛이 난다.</p>
+      <p>저는 pretendard 체를 정말 많이 사용해요. 디자인 관련작업에서도, 단순한 문서작업에서도 pretendard 를 정말 많이 쓰는 편이에요. 특별히 모난 부분 없고, 어디에 적용해도 무난하게 스며드는 것 같아요</p>
 
     <h2 id="2">2. A4 한 장을 꽉 채운다고 가정했을 때, 어떤 크기의 폰트를 사용하고 싶으신가요? </h2>
 
-    <div class="author"></div>
 
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>저는 11pt를 사용할 것 같아요. 개인적으로 작은 글자들을 선호하기도 하고, 작은 글자들이 모였을때 느껴지는 오밀조밀함이 좋은 것 같아요. 감사하게도 아직까지는 작은 글자들이 술술 읽히네요. 그리고 뭔가 작은 글자들이 뭉쳐있는 책을 펼치면 지식이 더 잘 쌓이는 듯한 느낌이 들어서 작은 글자들을 선호하는 경향이 있는 것도 같아요.</p>
    
     <h2 id="3">3. 평소에 글을 읽을 때, 글 속의 행간을 의식하며 읽는 편인가요?</h2> 
 
-    <div class="author"></div>
 
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>네 저는 행간을 꽤 의식하면서 읽는데요. 글을 읽을 때 호흡을 많이 타는 편이에요. 행간이 좁으면 좁은대로 글이 잘 읽히지 않고, 행간이 넓으면 넓은대로 글이 잘 안 읽혀요. 감각이 예민한 편이라 내가 집중하고 있는 상황에서 이 집중을 깨트리는 요소가 생기면 집중력이 많이 흐려지는 것 같아요. </p>
   
     <h2 id="4">4. 숏폼처럼 짧게 끊어지는 글줄 vs 한 페이지를 가득 채우는 길이의 글줄 </h2> 
 
-    <div class="author"></div>
 
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>저는 짧게 끊어지는 글줄을 더 선호해요. 리듬을 타기 시작하면 더 잘 읽히기도 하고, 이해도 잘 되는 것 같아요. 개인적으로 시를 좋아하기 떄문에 다른 장르의 글을 읽을 때도 운율을 타면서 읽는 버릇이 생겼어요. 운율마다 내용이 나뉘는 것도 재미있고, 더 기억에 오래 남게 되는 것 같아요.</p>
     
     <h2 id="5">5. 단락을 나눌 때 가장 중요하게 생각하는 기준은 무엇인가요?</h2> 
 
-    <div class="author"></div>
       
-      <p>시를 쓰는 일은 무엇을 원하지 않는 상태가 되는 일이다. 또는 무엇을 원하는지 알지 못하는 상태가 되는 일이다. 시를 쓰기 위해서는 눈앞에 펼쳐지는 시간과 공간, 사물, 현실의 이름을 거부하고 그것들로부터 멀어지기를 계속해야 한다. 그들과의 밀착에서 벗어나야 하고, 그들과의 사이에 틈을 만들어야 한다. 일종의 공황 상태다. 의식은 마비 상태에 가까운 무력증을 드러내고, 두뇌는 기능을 잃는 듯 여겨진다. 가진 것을 잃은 것이다. 이는 지각, 감각, 기억, 연상 등을 잃고 사라져버리는 일이다. 정신이 무장 해제되는 것, 바로 이것이 시의 토대다.</p>
+      <p>내용인 것 같아요. 글의 내용이 시각적으로 나눠져야 읽기 편하기도 하고, 글의 내용도 잘 파악할 수 있다고 생각해요.괜히 초중고 국어교육과정에 문단별 중심내용 파악과 같은 내용이 실린게 아닐거에요. 우리가 어떤 독서활동을 하든 단락이 잘 나눠진 글을 읽는다면 읽기 편하다는 인강을 받을 수 밖에 없는 것 같아요. </p>
   
     </article>
 </body>
